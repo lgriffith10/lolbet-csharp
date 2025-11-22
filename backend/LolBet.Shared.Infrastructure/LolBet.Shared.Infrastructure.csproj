@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>LolBet.Shared.Infrastructure</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\LolBet.Core.Domain\LolBet.Core.Domain.csproj" />
+      <ProjectReference Include="..\LolBet.Core.Infrastructure\LolBet.Core.Infrastructure.csproj" />
+      <ProjectReference Include="..\LolBet.Shared.Domain\LolBet.Shared.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0" />
+    </ItemGroup>
+
+</Project>
