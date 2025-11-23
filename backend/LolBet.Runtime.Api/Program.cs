@@ -1,3 +1,4 @@
+using System.Reflection;
 using LolBet.Shared.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -5,6 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblies(
+        Assembly.Load("LolBet.Core.Application"),
+        Assembly.GetExecutingAssembly()
+    );
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
