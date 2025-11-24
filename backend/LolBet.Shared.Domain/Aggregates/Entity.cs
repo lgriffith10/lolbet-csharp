@@ -3,7 +3,7 @@ namespace LolBet.Shared.Domain.Aggregates;
 public abstract class Entity<TId> : IEquatable<Entity<TId>> 
     where TId : notnull
 {
-    public TId Id { get; protected set; }
+    public TId Id { get; set; }
 
     public Entity(TId id)
     {

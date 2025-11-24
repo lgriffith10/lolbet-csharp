@@ -19,4 +19,8 @@
         <Using Include="Xunit"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\LolBet.Core.Domain\LolBet.Core.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
