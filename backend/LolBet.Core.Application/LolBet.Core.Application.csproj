@@ -10,4 +10,8 @@
       <PackageReference Include="MediatR" Version="13.1.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\LolBet.Core.Domain\LolBet.Core.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

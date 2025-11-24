@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\LolBet.Core.Domain\LolBet.Core.Domain.csproj" />
+      <ProjectReference Include="..\LolBet.Shared.Infrastructure\LolBet.Shared.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

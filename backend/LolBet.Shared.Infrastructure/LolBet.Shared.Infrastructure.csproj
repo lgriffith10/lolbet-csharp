@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\LolBet.Core.Domain\LolBet.Core.Domain.csproj" />
-      <ProjectReference Include="..\LolBet.Core.Infrastructure\LolBet.Core.Infrastructure.csproj" />
       <ProjectReference Include="..\LolBet.Shared.Domain\LolBet.Shared.Domain.csproj" />
     </ItemGroup>
 
