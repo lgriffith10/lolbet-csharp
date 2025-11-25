@@ -8,6 +8,8 @@
 
     <ItemGroup>
         <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.0" />
+        <PackageReference Include="Autofac" Version="9.0.0" />
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
         <PackageReference Include="MediatR" Version="13.1.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.11">
@@ -20,6 +22,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\LolBet.Core.Application\LolBet.Core.Application.csproj" />
+      <ProjectReference Include="..\LolBet.Core.Infrastructure\LolBet.Core.Infrastructure.csproj" />
       <ProjectReference Include="..\LolBet.Shared.Infrastructure\LolBet.Shared.Infrastructure.csproj" />
     </ItemGroup>
 

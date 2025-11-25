@@ -13,7 +13,7 @@ public class UserController(IMediator mediator)
     [Route("[action]")]
     [ProducesResponseType(typeof(CreateUserResponse), (int)HttpStatusCode.Created)]
     [ProducesResponseType(typeof(CreateUserResponse), (int)HttpStatusCode.BadRequest)]
-    public async Task<CreateUserResponse> GetWeatherForecast([FromBody] CreateUserRequest request, CancellationToken cancellationToken)
+    public async Task<CreateUserResponse> CreateUser([FromBody] CreateUserRequest request, CancellationToken cancellationToken)
     {
         return await mediator.Send(request, cancellationToken);
     }

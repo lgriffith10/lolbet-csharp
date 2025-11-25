@@ -1,14 +1,13 @@
-using LolBet.Domain.Aggregates.User;
 using LolBet.Domain.Aggregates.User.Events;
-using LolBet.Shared.Domain.DomainEvents;
+using MediatR;
 
 namespace LolBet.Core.Infrastructure.DomainEventHandlers.User;
 
-public class UserCreatedDomainEventHandler : IDomainEventHandler<UserCreatedDomainEvent>
+public class UserCreatedDomainEventHandler : INotificationHandler<UserCreatedDomainEvent>
 {
-    public Task HandleAsync(UserCreatedDomainEvent domainEvent, CancellationToken cancellationToken = default)
+    public Task Handle(UserCreatedDomainEvent notification, CancellationToken cancellationToken)
     {
-        Console.WriteLine(domainEvent.AggregateId);
+        Console.WriteLine(notification.AggregateId);
         throw new NotImplementedException();
     }
 }

@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: yourproject_postgres
+    container_name: lolbet_postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: lolbet
@@ -13,11 +13,11 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d yourdb"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d lolbet"]
       interval: 10s
       timeout: 5s
       retries: 5
 
-volumes:yourpassword
+volumes:
   postgres_data:
     driver: local
