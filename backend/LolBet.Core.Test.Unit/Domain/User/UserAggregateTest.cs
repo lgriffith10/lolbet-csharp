@@ -18,7 +18,6 @@ public class UserAggregateTest
         // Assert
         
         Assert.NotNull(result);
-        
         Assert.Equal(userId, result.Id);
     }
 }

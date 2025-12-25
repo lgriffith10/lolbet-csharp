@@ -1,12 +1,12 @@
+using LolBet.Domain.Aggregates.Common;
+
 namespace LolBet.Domain.Aggregates.User;
 
-public class UserId
+public class UserId : SimpleValueObject<Guid>
 {
-    public Guid Value { get; }
     
-    private UserId(Guid value)
+    private UserId(Guid value) : base(value)
     {
-        Value = value;
     }
 
     public static UserId Create(Guid id)

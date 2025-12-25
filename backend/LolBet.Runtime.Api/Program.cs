@@ -4,6 +4,9 @@ using Autofac.Extensions.DependencyInjection;
 using LolBet.Core.Infrastructure.AggregateRepositories;
 using LolBet.Domain.Repositories;
 using LolBet.Shared.Domain.Aggregates;
+using LolBet.Shared.Domain.Contracts;
+using LolBet.Shared.Domain.Persistence;
+using LolBet.Shared.Infrastructure.Contracts;
 using LolBet.Shared.Infrastructure.Persistence;
 using LolBet.Shared.Infrastructure.Persistence.Repositories;
 using MediatR;
@@ -34,8 +37,14 @@ builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder =>
         typeof(AggregateRoot<>).Assembly,
         typeof(IUserAggregateRepository).Assembly,
         typeof(EfCoreAggregateRepository<,>).Assembly,
+        typeof(EfCoreUnitOfWork).Assembly,
         typeof(UserAggregateRepository).Assembly
     };
+    
+    containerBuilder
+        .RegisterGeneric(typeof(EfCoreRawRepository<>))
+        .As(typeof(IRawRepository<>))
+        .InstancePerLifetimeScope();
 
     containerBuilder.RegisterAssemblyTypes(assemblies)
         .Where(t =>

@@ -5,7 +5,6 @@ namespace LolBet.Domain.Aggregates.User;
 
 public class UserAggregate : AggregateRoot<UserId>
 {
-    
     private UserAggregate(UserId id) : base(id)
     {
     }

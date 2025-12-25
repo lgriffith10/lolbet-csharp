@@ -19,6 +19,8 @@ public class CreateUserHandler(IUserAggregateRepository userAggregateRepository,
 
         await userAggregateRepository.SaveAsync(user, cancellationToken);
 
+        await unitOfWork.CommitAsync(cancellationToken);
+
         return new CreateUserResponse(userId.Value);
     }
 }

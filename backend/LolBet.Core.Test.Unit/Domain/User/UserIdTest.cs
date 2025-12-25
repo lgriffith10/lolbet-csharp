@@ -27,13 +27,9 @@ public class UserIdTest
         
         var id = Guid.Empty;
 
-        // Act
+        // Act & Assert
         
-        var act = () => UserId.Create(id);
-
-        // Assert
-        
-        var exception = Assert.Throws<ArgumentException>(act);
+        var exception = Assert.Throws<ArgumentException>(() => UserId.Create(id));
         Assert.Contains("Id cannot be empty", exception.Message);
     }
 }

@@ -1,13 +1,19 @@
 using LolBet.Domain.Aggregates.User.Events;
+using LolBet.Domain.Tables;
+using LolBet.Shared.Domain.Persistence;
 using MediatR;
 
 namespace LolBet.Core.Infrastructure.DomainEventHandlers.User;
 
-public class UserCreatedDomainEventHandler : INotificationHandler<UserCreatedDomainEvent>
+public sealed class UserCreatedDomainEventHandler(IRawRepository<UserTable> userRepository) : INotificationHandler<UserCreatedDomainEvent>
 {
-    public Task Handle(UserCreatedDomainEvent notification, CancellationToken cancellationToken)
+    public async Task Handle(UserCreatedDomainEvent notification, CancellationToken cancellationToken)
     {
-        Console.WriteLine(notification.AggregateId);
-        throw new NotImplementedException();
+        var table = new UserTable
+        {
+            Id = Guid.NewGuid()
+        };
+
+        await userRepository.AddAsync(table, cancellationToken); 
     }
 }
